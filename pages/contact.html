@@ -4,41 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - Tier 1 Home Services</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+    }
+    .contact-form {
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      max-width: 400px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .contact-form form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: #004c6d;
+    }
+    .contact-form form input,
+    .contact-form form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.3rem;
+      border: 1px solid #b2ebf2;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #f7fafc;
+      transition: border-color 0.2s;
+    }
+    .contact-form form input:focus,
+    .contact-form form textarea:focus {
+      border-color: #004c6d;
+      outline: none;
+    }
+    .contact-form button {
+      margin-top: 1.5rem;
+      width: 100%;
+      background: #004c6d;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #0074a6;
+    }
+    .contact-info {
+      text-align: center;
+      background: #e0f7fa;
+      padding: 1.2rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      color: #004c6d;
+      font-size: 1.05rem;
+      max-width: 400px;
+      margin: 0 auto 2rem auto;
+    }
+    .contact-info p {
+      margin: 0.7em 0;
+    }
+    @media (max-width: 500px) {
+      .contact-form, .contact-info {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-    <p>Let’s Bring Your Vision to Life</p>
-  </header>
-
-  <section class="contact-form">
-    <form action="https://formspree.io/f/your-id" method="POST">
-      <label>Name</label>
-      <input type="text" name="name" required />
-
-      <label>Email</label>
-      <input type="email" name="email" required />
-
-      <label>Phone</label>
-      <input type="tel" name="phone" />
-
-      <label>Message</label>
-      <textarea name="message" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div class="contact-info">
-      <p><strong>📍 Location:</strong> Atlanta, GA</p>
-      <p><strong>📞 Phone:</strong> (555) 123-4567</p>
-      <p><strong>✉️ Email:</strong> info@tier1homeservices.com</p>
-      <p><strong>⏰ Hours:</strong> Mon–Sat: 8:00am – 6:00pm</p>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height:56px; width:auto;">
+      <span class="brand-name">Tier 1 Home Services</span>
     </div>
-  </section>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="estimate.html">Estimate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="contact-section">
+      <header>
+        <h1 style="color:#d3dce0; text-align:center; margin-bottom:0.5em;">Contact Us</h1>
+        <p style="text-align:center; color:#c5d0d4;">Let’s Bring Your Vision to Life</p>
+      </header>
+
+      <div class="contact-form">
+        <form action="https://formspree.io/f/your-id" method="POST">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" id="phone" />
+
+          <label for="message">Message</label>
+          <textarea name="message" id="message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <p><strong>📍 Location:</strong> Lewisville, TX</p>
+        <p><strong>📞 Phone:</strong> (555) 123-4567</p>
+        <p><strong>✉️ Email:</strong> info@tier1homeservices.com</p>
+        <p><strong>⏰ Hours:</strong> Mon–Sat: 8:00am – 6:00pm</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
   </footer>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/form-validation.js" defer></script>
 </body>
-</html>

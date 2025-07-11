@@ -11,6 +11,9 @@ A modern, responsive website for Tier One Home Services, specializing in remodel
 - SEO optimized (meta tags, Open Graph, sitemap, robots.txt)
 - Automated sitemap generation
 - Easy to update and maintain
+- Interactive hamburger menu for mobile navigation
+- Dedicated Gallery page with lightbox functionality
+- Modern horizontal header with logo (PNG supported)
 
 ---
 
@@ -24,15 +27,26 @@ A modern, responsive website for Tier One Home Services, specializing in remodel
 │   ├── services.html
 │   ├── portfolio.html
 │   ├── estimate.html
-│   └── contact.html
+│   ├── contact.html
+│   └── gallery.html
 ├── styles/
 │   ├── main.css
 │   └── responsive.css
 ├── js/
 │   ├── main.js
-│   └── form-validation.js
+│   ├── form-validation.js
+│   └── gallery.js
 ├── images/
-│   └── (logo, hero, portfolio, etc.)
+│   └── hero/
+│       ├── logo/
+│       │   ├── logo.png
+│       │   └── favicon.ico
+│       ├── hero-desktop.jpg
+│       ├── portfolio/
+│       │   ├── project1/
+│       │   ├── project2/
+│       │   └── project3/
+│       └── team/
 ├── scripts/
 │   └── generate-sitemap.js
 ├── sitemap.xml
@@ -56,6 +70,16 @@ npm run dev
 ```bash
 npm run generate-sitemap
 ```
+
+**Update images:**
+
+- Place your logo in `images/hero/logo/logo.png`.
+- Add gallery/portfolio images in the respective folders under `images/hero/portfolio/`.
+
+**Navigation:**
+
+- Hamburger menu is interactive on mobile screens.
+- Gallery page is accessible from the main navigation.
 
 ---
 

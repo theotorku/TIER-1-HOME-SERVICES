@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Tier 1 Home Services</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+  <style>
+    .gallery-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 1rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .gallery-item {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,76,109,0.12);
+    }
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      max-width: 90vw;
+      max-height: 80vh;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 60vh;
+      border-radius: 8px;
+    }
+    .lightbox-caption {
+      margin-top: 1rem;
+      color: #004c6d;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height:56px; width:auto;">
+      <span class="brand-name">Tier One Home Services</span>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="estimate.html">Estimate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="gallery-section">
+      <header>
+        <h1 style="color:#e7ecee; text-align:center; margin-bottom:0.5em;">Gallery</h1>
+        <p style="text-align:center; color:#bdd2db;">Browse our project images</p>
+      </header>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="../images/hero/portfolio/project1/after.jpg" alt="Bathroom Remodel - After" />
+          <div>Modern Bathroom Remodel</div>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/hero/portfolio/project1/before.jpg" alt="Bathroom Remodel - Before" />
+          <div>Before Renovation</div>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/hero/hero-desktop.jpg" alt="Flooring Work Example" />
+          <div>Tile Flooring Project</div>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/hero/portfolio/project2/after.jpg" alt="Kitchen Remodel - After" />
+          <div>Contemporary Kitchen Remodel</div>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/hero/portfolio/project2/before.jpg" alt="Kitchen Remodel - Before" />
+          <div>Before Renovation</div>
+        </div>
+        <div class="gallery-item">
+          <img src="../images/hero/portfolio/project3/after.jpg" alt="Living Room Remodel - After" />
+          <div>Elegant Living Room Remodel</div>
+      </div>
+      <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+          <img id="lightbox-img" src="" alt="" />
+          <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
+  </footer>
+  <script src="../js/gallery.js" defer></script>
+</body>
+</html>

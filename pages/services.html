@@ -22,78 +22,142 @@
     <meta name="twitter:image" content="https://yourdomain.com/images/services/services-og.jpg">
 
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="icon" href="../images/logo/favicon.ico">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #e0f7fa 0%, #f4f4f4 100%);
+      }
+      .services-header {
+        background: linear-gradient(90deg, #004c6d 60%, #0074a6 100%);
+        color: #fff;
+        padding: 40px 0 20px 0;
+        text-align: center;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      }
+      .services-header h1 {
+        margin-bottom: 0.5em;
+        font-size: 2.2rem;
+      }
+      .services-header p {
+        font-size: 1.15rem;
+        color: #e0f7fa;
+      }
+      .services-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin: 40px auto 0 auto;
+        max-width: 1100px;
+      }
+      .service-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        padding: 2rem 1.5rem;
+        width: 320px;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(0,76,109,0.12);
+      }
+      .service-icon {
+        font-size: 2.5rem;
+        color: #0074a6;
+        margin-bottom: 1rem;
+      }
+      .service-card h3 {
+        margin: 0.5em 0 0.7em 0;
+        color: #004c6d;
+        font-size: 1.25rem;
+      }
+      .service-card p {
+        color: #333;
+        font-size: 1.05rem;
+        text-align: center;
+      }
+      @media (max-width: 900px) {
+        .services-list {
+          gap: 1rem;
+        }
+        .service-card {
+          width: 90vw;
+          max-width: 400px;
+        }
+      }
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        font-size: small;
+        color: #666;
+        background: #e0f7fa;
+        padding: 1.2rem 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height:56px; width:auto;">
+      <span class="brand-name">Tier 1 Home Services</span>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="estimate.html">Estimate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="services-header">
     <h1>Our Services</h1>
     <p>We deliver expert craftsmanship with precision and care.</p>
   </header>
 
   <section class="services-list">
-    <h2>What We Offer</h2>
-    <ul>
-      <li><strong>Bathroom Remodeling</strong><br>
-        Custom tile showers, modern vanities, updated fixtures, and waterproofing done right.</li>
-
-      <li><strong>Kitchen Remodeling</strong><br>
-        From layout redesigns to cabinets, countertops, and backsplashes, we do it all.</li>
-
-      <li><strong>Flooring Installation</strong><br>
-        Professional installation of tile, hardwood, vinyl, and laminate with precision leveling.</li>
-
-      <li><strong>Interior Renovations</strong><br>
-        Walls, ceilings, painting, and layout changes to enhance flow and function.</li>
-
-      <li><strong>Custom Tiling</strong><br>
-        High-end finishes for bathrooms, kitchens, and floors with intricate tile work.</li>
-    </ul>
+    <div class="service-card">
+      <span class="service-icon"><i class="fas fa-shower"></i></span>
+      <h3>Bathroom Remodeling</h3>
+      <p>Custom tile showers, modern vanities, updated fixtures, and waterproofing done right.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon"><i class="fas fa-utensils"></i></span>
+      <h3>Kitchen Remodeling</h3>
+      <p>From layout redesigns to cabinets, countertops, and backsplashes, we do it all.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon"><i class="fas fa-th-large"></i></span>
+      <h3>Flooring Installation</h3>
+      <p>Professional installation of tile, hardwood, vinyl, and laminate with precision leveling.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon"><i class="fas fa-paint-roller"></i></span>
+      <h3>Interior Renovations</h3>
+      <p>Walls, ceilings, painting, and layout changes to enhance flow and function.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon"><i class="fas fa-border-all"></i></span>
+      <h3>Custom Tiling</h3>
+      <p>High-end finishes for bathrooms, kitchens, and floors with intricate tile work.</p>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
   </footer>
+  <script src="../js/main.js" defer></script>
 </body>
-</html>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-  }
-
-  header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .services-list {
-    margin-top: 20px;
-  }
-
-  .services-list h2 {
-    color: #333;
-  }
-
-  .services-list ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .services-list li {
-    background-color: white;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: small;
-    color: #666;
-  }

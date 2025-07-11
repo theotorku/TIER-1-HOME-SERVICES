@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tier One Home Services | DFW Remodeling Experts</title>
-    <meta name="description" content="Tier One Home Services provides expert remodeling for bathrooms, kitchens, and flooring in the Dallas-Fort Worth area. Quality craftsmanship and customer satisfaction since 2010.">
-    <meta name="keywords" content="DFW remodeling, home renovation, bathroom remodel, kitchen remodel, flooring, Tier One Home Services, Dallas, Fort Worth">
-    <meta name="author" content="Tier One Home Services">
+    <title>Tier 1 Home Services | DFW Remodeling Experts</title>
+    <meta name="description" content="Tier 1 Home Services provides expert remodeling for bathrooms, kitchens, and flooring in the Dallas-Fort Worth area. Quality craftsmanship and customer satisfaction since 2010.">
+    <meta name="keywords" content="DFW remodeling, home renovation, bathroom remodel, kitchen remodel, flooring, Tier 1 Home Services, Dallas, Fort Worth">
+    <meta name="author" content="Tier 1 Home Services">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Tier One Home Services | DFW Remodeling Experts">
+    <meta property="og:title" content="Tier 1 Home Services | DFW Remodeling Experts">
     <meta property="og:description" content="Expert remodeling for bathrooms, kitchens, and flooring in Dallas-Fort Worth. Quality craftsmanship and customer satisfaction since 2010.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.com/">
@@ -26,30 +26,51 @@
     <link rel="icon" href="images/logo/favicon.ico">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
+    <header class="main-header horizontal-header">
+        <div class="container horizontal-container">
             <a href="index.html" class="logo">
-                <img src="images/logo/logo.svg" alt="Tier One Home Services">
+                <img src="images/hero/logo/logo.png" alt="Tier 1 Home Services">
             </a>
+            <h1 class="site-title">Tier 1 Home Services</h1>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="pages/services.html">Services</a></li>
                     <li><a href="pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="pages/gallery.html">Gallery</a></li>
                     <li><a href="pages/about.html">About</a></li>
                     <li><a href="pages/contact.html" class="btn">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="container">
-                <h1>Premium Remodeling Services in DFW</h1>
-                <p>Transforming homes with quality craftsmanship since 2010</p>
-                <a href="pages/estimate.html" class="btn btn-primary">Get Free Estimate</a>
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1 style="font-size:2.7rem;letter-spacing:1px;font-weight:bold;">Transform Your Home with Tier 1 Quality</h1>
+                <p style="font-size:1.25rem;margin-bottom:1.5em;">Expert remodeling for bathrooms, kitchens, and flooring in DFW. We bring your vision to life!</p>
+                <a href="pages/estimate.html" class="cta-btn">Get Your Free Estimate</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <span class="feature-icon"><i class="fas fa-shower"></i></span>
+                <h3>Bathroom Remodels</h3>
+                <p>Modern designs, custom tile, and luxury finishes.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon"><i class="fas fa-utensils"></i></span>
+                <h3>Kitchen Upgrades</h3>
+                <p>Cabinets, countertops, and open layouts.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon"><i class="fas fa-th-large"></i></span>
+                <h3>Flooring</h3>
+                <p>Tile, hardwood, vinyl, and more.</p>
             </div>
         </section>
 
@@ -68,5 +89,183 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+      // Hamburger menu toggle for mobile navigation
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.querySelector('.main-nav ul');
+        menuBtn.style.display = 'none';
+        function checkWidth() {
+          if (window.innerWidth <= 900) {
+            menuBtn.style.display = 'block';
+            nav.style.display = 'none';
+          } else {
+            menuBtn.style.display = 'none';
+            nav.style.display = 'flex';
+          }
+        }
+        checkWidth();
+        window.addEventListener('resize', checkWidth);
+        menuBtn.addEventListener('click', function () {
+          if (nav.style.display === 'none') {
+            nav.style.display = 'flex';
+          } else {
+            nav.style.display = 'none';
+          }
+        });
+      });
+    </script>
+    <style>
+        .horizontal-header {
+            background: #004c6d;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        .horizontal-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .logo img {
+            max-height: 120px;
+        }
+        .site-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 32px;
+            letter-spacing: 1px;
+            color: #fff;
+            flex: 1;
+            text-align: left;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .main-nav a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.08rem;
+            padding: 6px 18px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .main-nav a:hover, .main-nav .btn:hover {
+            background: #0074a6;
+        }
+        .main-nav .btn {
+            background: #fff;
+            color: #004c6d;
+            font-weight: bold;
+        }
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-left: 16px;
+        }
+        @media (max-width: 900px) {
+            .horizontal-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 12px;
+            }
+            .site-title {
+                margin: 16px 0;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+        /* ...existing code... */
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            background: linear-gradient(120deg, #004c6d 60%, #0074a6 100%);
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/hero/hero-desktop.jpg') center/cover no-repeat;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #004c6d;
+            padding: 0.9em 2em;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0,76,109,0.12);
+            transition: background 0.2s, color 0.2s;
+        }
+        .cta-btn:hover {
+            background: #0074a6;
+            color: #fff;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3em auto;
+            max-width: 900px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2em 1.5em;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 8px 32px rgba(0,76,109,0.12);
+        }
+        .feature-icon {
+            font-size: 2.2rem;
+            color: #0074a6;
+            margin-bottom: 0.7em;
+        }
+        @media (max-width: 900px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-card {
+                width: 90vw;
+                max-width: 400px;
+            }
+        }
+    </style>
 </body>
 </html>
