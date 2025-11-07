@@ -32,7 +32,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(css|js|jpg|png|webp))",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
