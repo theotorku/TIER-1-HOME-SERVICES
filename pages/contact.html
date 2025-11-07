@@ -1,144 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Tier 1 Home Services</title>
-  <link rel="stylesheet" href="../styles/main.css" />
-  <link rel="stylesheet" href="../styles/responsive.css" />
-  <style>
-    body {
-      background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .contact-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
-    }
-    .contact-form {
-      background: #fff;
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      max-width: 400px;
-      width: 100%;
-      margin-bottom: 2rem;
-    }
-    .contact-form form label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 500;
-      color: #004c6d;
-    }
-    .contact-form form input,
-    .contact-form form textarea {
-      width: 100%;
-      padding: 0.7rem;
-      margin-top: 0.3rem;
-      border: 1px solid #b2ebf2;
-      border-radius: 6px;
-      font-size: 1rem;
-      background: #f7fafc;
-      transition: border-color 0.2s;
-    }
-    .contact-form form input:focus,
-    .contact-form form textarea:focus {
-      border-color: #004c6d;
-      outline: none;
-    }
-    .contact-form button {
-      margin-top: 1.5rem;
-      width: 100%;
-      background: #004c6d;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 0.9rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .contact-form button:hover {
-      background: #0074a6;
-    }
-    .contact-info {
-      text-align: center;
-      background: #e0f7fa;
-      padding: 1.2rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      color: #004c6d;
-      font-size: 1.05rem;
-      max-width: 400px;
-      margin: 0 auto 2rem auto;
-    }
-    .contact-info p {
-      margin: 0.7em 0;
-    }
-    @media (max-width: 500px) {
-      .contact-form, .contact-info {
-        padding: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height:56px; width:auto;">
-      <span class="brand-name">Tier 1 Home Services</span>
-    </div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="estimate.html">Estimate</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <section class="contact-section">
-      <header>
-        <h1 style="color:#d3dce0; text-align:center; margin-bottom:0.5em;">Contact Us</h1>
-        <p style="text-align:center; color:#c5d0d4;">Let’s Bring Your Vision to Life</p>
-      </header>
-
-      <div class="contact-form">
-        <form action="https://formspree.io/f/your-id" method="POST">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" required />
-
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" required />
-
-          <label for="phone">Phone</label>
-          <input type="tel" name="phone" id="phone" />
-
-          <label for="message">Message</label>
-          <textarea name="message" id="message" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-
-      <div class="contact-info">
-        <p><strong>📍 Location:</strong> Lewisville, TX</p>
-        <p><strong>📞 Phone:</strong> (555) 123-4567</p>
-        <p><strong>✉️ Email:</strong> info@tier1homeservices.com</p>
-        <p><strong>⏰ Hours:</strong> Mon–Sat: 8:00am – 6:00pm</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
-  </footer>
-  <script src="../js/main.js" defer></script>
-  <script src="../js/form-validation.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Tier 1 Home Services</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+      body { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fff 100%); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+      .contact-section { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 85vh; padding: 2rem 1rem; }
+      .contact-header { text-align: center; margin-bottom: 2.5rem; max-width: 700px; }
+      .contact-header h1 { color: #004c6d; font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 700; }
+      .contact-header .subtitle { color: #0074a6; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 500; }
+      .contact-header p { color: #555; font-size: 1.05rem; line-height: 1.6; margin: 0; }
+      .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1100px; width: 100%; }
+      .contact-form { background: #fff; padding: 2.5rem; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 76, 109, 0.12); border: 1px solid rgba(0, 116, 166, 0.1); }
+      .contact-form h2 { color: #004c6d; font-size: 1.5rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+      .contact-form h2 i { color: #0074a6; }
+      .contact-form .form-intro { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5; }
+      .form-group { margin-bottom: 1.25rem; }
+      .contact-form form label { display: block; margin-bottom: 0.4rem; font-weight: 600; color: #004c6d; font-size: 0.95rem; }
+      .contact-form form input, .contact-form form textarea, .contact-form form select { width: 100%; padding: 0.85rem 1rem; border: 2px solid #e0f2fe; border-radius: 8px; font-size: 1rem; background: #f8fafc; transition: all 0.3s ease; font-family: inherit; }
+      .contact-form form input:focus, .contact-form form textarea:focus, .contact-form form select:focus { border-color: #0074a6; background: #fff; outline: none; box-shadow: 0 0 0 3px rgba(0, 116, 166, 0.1); }
+      .contact-form form textarea { min-height: 120px; resize: vertical; }
+      .contact-form button { margin-top: 1rem; width: 100%; background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%); color: #fff; border: none; border-radius: 8px; padding: 1rem; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0, 76, 109, 0.2); display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+      .contact-form button:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0, 76, 109, 0.3); }
+      .contact-form button:active { transform: translateY(0); }
+      .contact-info-panel { display: flex; flex-direction: column; gap: 1.5rem; }
+      .info-card { background: #fff; padding: 1.75rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 76, 109, 0.08); border-left: 4px solid #0074a6; transition: all 0.3s ease; }
+      .info-card:hover { transform: translateX(5px); box-shadow: 0 6px 24px rgba(0, 76, 109, 0.15); }
+      .info-card h3 { color: #004c6d; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+      .info-card h3 i { color: #0074a6; font-size: 1.3rem; }
+      .info-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; color: #555; font-size: 1rem; }
+      .info-item:last-child { margin-bottom: 0; }
+      .info-item i { color: #0074a6; width: 20px; text-align: center; }
+      .info-item a { color: #0074a6; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+      .info-item a:hover { color: #004c6d; text-decoration: underline; }
+      .why-choose { background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%); color: #fff; padding: 1.75rem; border-radius: 12px; box-shadow: 0 4px 16px rgba(0, 76, 109, 0.2); }
+      .why-choose h3 { color: #fff; font-size: 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+      .why-choose ul { list-style: none; padding: 0; margin: 0; }
+      .why-choose li { padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
+      .why-choose li i { color: #b3e5fc; font-size: 1rem; }
+      @media (max-width: 900px) { .contact-container { grid-template-columns: 1fr; gap: 1.5rem; } .contact-header h1 { font-size: 2rem; } .contact-header .subtitle { font-size: 1.1rem; } .contact-form, .info-card, .why-choose { padding: 1.5rem; } }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand"><img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height: 56px; width: auto" /><span class="brand-name">Tier 1 Home Services</span></div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="estimate.html">Estimate</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="contact-section">
+        <div class="contact-header">
+          <h1>Let's Start Your Dream Project! 🏡</h1>
+          <p class="subtitle">We're Here to Help Transform Your Home</p>
+          <p>Have a question or ready to get started? We'd love to hear from you! Fill out the form below and our friendly team will get back to you within 24 hours.</p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-form">
+            <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+            <p class="form-intro">Tell us about your project and we'll provide a free consultation and estimate!</p>
+            <form action="https://formspree.io/f/your-id" method="POST">
+              <div class="form-group"><label for="name">Your Name *</label><input type="text" name="name" id="name" placeholder="John Smith" required autocomplete="name" /></div>
+              <div class="form-group"><label for="email">Email Address *</label><input type="email" name="email" id="email" placeholder="john@example.com" required autocomplete="email" /></div>
+              <div class="form-group"><label for="phone">Phone Number</label><input type="tel" name="phone" id="phone" placeholder="(555) 123-4567" autocomplete="tel" /></div>
+              <div class="form-group"><label for="service">What service are you interested in?</label><select name="service" id="service"><option value="">Select a service...</option><option value="bathroom">Bathroom Remodel</option><option value="kitchen">Kitchen Upgrade</option><option value="flooring">Flooring Installation</option><option value="multiple">Multiple Services</option><option value="other">Other / Not Sure</option></select></div>
+              <div class="form-group"><label for="message">Tell Us About Your Project *</label><textarea name="message" id="message" placeholder="Share your vision, timeline, budget, or any questions you have..." required></textarea></div>
+              <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+          </div>
+          <div class="contact-info-panel">
+            <div class="info-card">
+              <h3><i class="fas fa-phone-alt"></i> Get In Touch</h3>
+              <div class="info-item"><i class="fas fa-phone"></i><a href="tel:+15551234567">(555) 123-4567</a></div>
+              <div class="info-item"><i class="fas fa-envelope"></i><a href="mailto:info@tier1homeservices.com">info@tier1homeservices.com</a></div>
+              <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>Lewisville, TX & Surrounding DFW Area</span></div>
+            </div>
+            <div class="info-card">
+              <h3><i class="fas fa-clock"></i> Business Hours</h3>
+              <div class="info-item"><i class="fas fa-calendar-day"></i><span><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</span></div>
+              <div class="info-item"><i class="fas fa-calendar-week"></i><span><strong>Saturday:</strong> 9:00 AM - 4:00 PM</span></div>
+              <div class="info-item"><i class="fas fa-calendar-times"></i><span><strong>Sunday:</strong> Closed</span></div>
+            </div>
+            <div class="why-choose">
+              <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Free Consultations & Estimates</li>
+                <li><i class="fas fa-check-circle"></i> 15+ Years of Experience</li>
+                <li><i class="fas fa-check-circle"></i> Licensed & Insured</li>
+                <li><i class="fas fa-check-circle"></i> Quality Craftsmanship</li>
+                <li><i class="fas fa-check-circle"></i> Customer Satisfaction Guaranteed</li>
+                <li><i class="fas fa-check-circle"></i> Competitive Pricing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><p>&copy; 2025 Tier 1 Home Services. All rights reserved.</p></footer>
+    <script src="../js/main.js" type="module" defer></script>
+    <script src="../js/form-validation.js" type="module" defer></script>
+  </body>
+</html>

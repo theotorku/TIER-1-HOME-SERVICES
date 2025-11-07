@@ -1,139 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Portfolio - Tier 1 Home Services</title>
-  <link rel="stylesheet" href="../styles/main.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height:56px; width:auto;">
-      <span class="brand-name">Tier 1 Home Services</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Portfolio - Tier 1 Home Services</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img
+          src="../images/hero/logo/logo.png"
+          alt="Tier One Home Services"
+          style="height: 56px; width: auto"
+        />
+        <span class="brand-name">Tier 1 Home Services</span>
+      </div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="estimate.html">Estimate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="portfolio-header">
+      <h1>Our Project Portfolio</h1>
+      <p>Showcasing our finest work and transformations across the DFW area</p>
+    </header>
+
+    <div class="portfolio-intro">
+      <h2>Quality Work That Speaks for Itself</h2>
+      <p>
+        Browse through our collection of completed projects to see the quality and attention to
+        detail we bring to every job. From stunning bathroom renovations to complete kitchen
+        transformations, each project represents our commitment to excellence.
+      </p>
     </div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="estimate.html">Estimate</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <header class="portfolio-header">
-    <h1>Our Portfolio</h1>
-    <p>See some of our recent remodeling work.</p>
-  </header>
+    <section class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <img src="../images/hero/portfolio/project1/after.jpg" alt="Modern Bathroom Remodel" />
+          <div class="portfolio-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="portfolio-caption">
+          <h3>Modern Bathroom Remodel</h3>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Celina, TX</p>
+          <p class="description">
+            Complete bathroom transformation with custom tile shower, modern vanity, and luxury
+            fixtures.
+          </p>
+          <div class="portfolio-tags">
+            <span class="tag"><i class="fas fa-shower"></i> Bathroom</span>
+            <span class="tag"><i class="fas fa-border-all"></i> Tiling</span>
+          </div>
+        </div>
+      </div>
 
-  <section class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="../images/hero/portfolio/project1/after.jpg" alt="Bathroom Remodel" />
-      <div class="portfolio-caption">
-        <strong>Modern Bathroom Remodel</strong><br>Celina, TX
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <img src="../images/hero/portfolio/project1/before.jpg" alt="Kitchen Renovation" />
+          <div class="portfolio-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="portfolio-caption">
+          <h3>Modern Kitchen Renovation</h3>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Lewisville, TX</p>
+          <p class="description">
+            Full kitchen remodel featuring custom cabinetry, granite countertops, and designer
+            backsplash.
+          </p>
+          <div class="portfolio-tags">
+            <span class="tag"><i class="fas fa-utensils"></i> Kitchen</span>
+            <span class="tag"><i class="fas fa-border-all"></i> Tiling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-image">
+          <img src="../images/hero/hero-desktop.jpg" alt="Tile Flooring Installation" />
+          <div class="portfolio-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="portfolio-caption">
+          <h3>Luxury Tile Flooring</h3>
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Dallas, TX</p>
+          <p class="description">
+            Premium tile flooring installation with custom pattern design and professional finish.
+          </p>
+          <div class="portfolio-tags">
+            <span class="tag"><i class="fas fa-th-large"></i> Flooring</span>
+            <span class="tag"><i class="fas fa-border-all"></i> Tiling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-section">
+      <h2>Love What You See?</h2>
+      <p>
+        Let's create something amazing for your home! Contact us today for a free consultation and
+        estimate.
+      </p>
+      <div class="cta-buttons">
+        <a href="estimate.html" class="cta-btn">
+          <i class="fas fa-calculator"></i>
+          Get Free Estimate
+        </a>
+        <a href="contact.html" class="cta-btn secondary">
+          <i class="fas fa-phone"></i>
+          Schedule Consultation
+        </a>
       </div>
     </div>
-    <div class="portfolio-item">
-      <img src="../images/hero/portfolio/project1/before.jpg" alt="Kitchen Remodel" />
-      <div class="portfolio-caption">
-        <strong>Modern Kitchen Renovation</strong><br>Lewisville, TX
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <img src="../images/hero/hero-desktop.jpg" alt="Flooring Work " />
-      <div class="portfolio-caption">
-        <strong>Tile Flooring Project</strong><br>Dallas, TX
-      </div>
-    </div>
-    <!-- Add more items as needed -->
-  </section>
 
-  <footer>
-    <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
-  </footer>
-  <script src="../js/main.js" defer></script>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #e0f7fa 0%, #f4f4f4 100%);
-    }
-    .portfolio-header {
-      background: linear-gradient(90deg, #004c6d 60%, #0074a6 100%);
-      color: #fff;
-      padding: 40px 0 20px 0;
-      text-align: center;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    }
-    .portfolio-header h1 {
-      margin-bottom: 0.5em;
-      font-size: 2.2rem;
-    }
-    .portfolio-header p {
-      font-size: 1.15rem;
-      color: #e0f7fa;
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin: 40px auto 0 auto;
-      max-width: 1100px;
-      padding: 0 1rem;
-    }
-    .portfolio-item {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .portfolio-item:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,76,109,0.12);
-    }
-    .portfolio-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-top-left-radius: 18px;
-      border-top-right-radius: 18px;
-    }
-    .portfolio-caption {
-      padding: 1.2em 1em;
-      text-align: center;
-      color: #004c6d;
-      font-size: 1.08rem;
-      background: #e0f7fa;
-      border-bottom-left-radius: 18px;
-      border-bottom-right-radius: 18px;
-      width: 100%;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: small;
-      color: #666;
-      background: #e0f7fa;
-      padding: 1.2rem 0;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
-    @media (max-width: 900px) {
+    <footer>
+      <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
+    </footer>
+    <script src="../js/main.js" type="module" defer></script>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8fafc;
+      }
+      .portfolio-header {
+        background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
+        color: #fff;
+        padding: 4rem 1rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        box-shadow: 0 4px 16px rgba(0, 76, 109, 0.15);
+      }
+      .portfolio-header h1 {
+        margin-bottom: 0.75rem;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .portfolio-header p {
+        font-size: 1.3rem;
+        color: #e0f2fe;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 400;
+      }
+      .portfolio-intro {
+        max-width: 900px;
+        margin: 0 auto 3rem;
+        padding: 0 1rem;
+        text-align: center;
+      }
+      .portfolio-intro h2 {
+        color: #004c6d;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .portfolio-intro p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
       .portfolio-grid {
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+        margin: 0 auto 3rem;
+        max-width: 1200px;
+        padding: 0 1rem;
       }
       .portfolio-item {
-        width: 90vw;
-        max-width: 400px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 76, 109, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 116, 166, 0.1);
       }
-    }
-  </style>
-</body>
+      .portfolio-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 32px rgba(0, 76, 109, 0.18);
+      }
+      .portfolio-image {
+        position: relative;
+        overflow: hidden;
+        height: 280px;
+      }
+      .portfolio-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .portfolio-item:hover .portfolio-image img {
+        transform: scale(1.1);
+      }
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 76, 109, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .portfolio-overlay i {
+        color: #fff;
+        font-size: 3rem;
+      }
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+      .portfolio-caption {
+        padding: 2rem 1.5rem;
+      }
+      .portfolio-caption h3 {
+        color: #004c6d;
+        font-size: 1.4rem;
+        margin: 0 0 0.75rem 0;
+        font-weight: 700;
+      }
+      .portfolio-caption .location {
+        color: #0074a6;
+        font-size: 0.95rem;
+        margin: 0 0 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+      .portfolio-caption .location i {
+        font-size: 0.9rem;
+      }
+      .portfolio-caption .description {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0 0 1.25rem 0;
+      }
+      .portfolio-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .tag {
+        background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+        color: #004c6d;
+        padding: 0.4rem 0.9rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border: 1px solid rgba(0, 116, 166, 0.2);
+      }
+      .tag i {
+        font-size: 0.8rem;
+        color: #0074a6;
+      }
+      .cta-section {
+        background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
+        color: #fff;
+        padding: 3rem 2rem;
+        text-align: center;
+        margin: 3rem auto;
+        max-width: 1200px;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 76, 109, 0.2);
+      }
+      .cta-section h2 {
+        color: #fff;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .cta-section p {
+        color: #e0f2fe;
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cta-btn {
+        background: #fff;
+        color: #004c6d;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+      }
+      .cta-btn.secondary {
+        background: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+      }
+      .cta-btn.secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      footer {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem 0;
+        background: #fff;
+        color: #666;
+        font-size: 0.95rem;
+        border-top: 1px solid #e0f2fe;
+      }
+      @media (max-width: 900px) {
+        .portfolio-header h1 {
+          font-size: 2.2rem;
+        }
+        .portfolio-header p {
+          font-size: 1.1rem;
+        }
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .portfolio-image {
+          height: 240px;
+        }
+        .portfolio-caption {
+          padding: 1.5rem 1.25rem;
+        }
+        .cta-section {
+          padding: 2rem 1.5rem;
+        }
+        .cta-section h2 {
+          font-size: 1.8rem;
+        }
+        .cta-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+    </style>
+  </body>
 </html>

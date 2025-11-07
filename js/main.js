@@ -1,61 +1,29 @@
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mainNav = document.querySelector('.main-nav');
-    
-    mobileMenuBtn.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        this.classList.toggle('active');
-    });
+/**
+ * Main Application Entry Point
+ * Imports and initializes all modules
+ */
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-});
+import './navigation.js';
 
-document.addEventListener('DOMContentLoaded', function () {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+// Utility function for lazy loading images
+function lazyLoadImages() {
+  const images = document.querySelectorAll('img[data-src]');
 
-  if (hamburger && navLinks) {
-    // Accessibility: ARIA attributes
-    hamburger.setAttribute('aria-label', 'Open navigation menu');
-    hamburger.setAttribute('aria-controls', 'nav-links');
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('tabindex', '0');
-    navLinks.setAttribute('aria-hidden', 'true');
-
-    function toggleMenu() {
-      const isActive = navLinks.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-      navLinks.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-
-    // Keyboard accessibility
-    hamburger.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+        observer.unobserve(img);
       }
     });
+  });
 
-    // Close menu when a link is clicked (mobile UX)
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function () {
-        if (navLinks.classList.contains('active')) {
-          navLinks.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
-          navLinks.setAttribute('aria-hidden', 'true');
-        }
-      });
-    });
-  }
+  images.forEach((img) => imageObserver.observe(img));
+}
+
+// Initialize lazy loading when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  lazyLoadImages();
 });

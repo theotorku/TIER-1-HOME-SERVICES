@@ -1,18 +1,38 @@
 {
   "name": "tier-one-home-services",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
-    "dev": "live-server",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
-  },
-  "resolutions": {
-    "trim-newlines": "4.1.1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "lint": "eslint . --ext .js,.html --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.html --fix --ignore-path .gitignore",
+    "format": "prettier --write \"**/*.{js,css,html,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,css,html,json,md}\"",
+    "prepare": "node -e \"try { require('husky').install() } catch (e) {}\""
   },
   "devDependencies": {
-    "live-server": "^1.2.0",
-    "npm-force-resolutions": "^0.0.10",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^8.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
     "sitemap": "^8.0.0",
-    "vite": "^6.3.5"
+    "terser": "^5.37.0",
+    "vite": "^6.3.5",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "lint-staged": {
+    "*.{js,html}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md}": [
+      "prettier --write"
+    ]
   }
 }

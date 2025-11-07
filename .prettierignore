@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+venv/
+*.min.js
+*.min.css
+package-lock.json
+sitemap.xml
+.env
+.env.*
+*.md
+
