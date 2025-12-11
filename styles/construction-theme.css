@@ -1,0 +1,217 @@
+/* Construction Theme Overrides */
+:root {
+    /* Construction Palette */
+    --color-construction-yellow: #FFC107;
+    --color-construction-black: #212121;
+    --color-construction-dark-grey: #37474F;
+    --color-construction-light-grey: #ECEFF1;
+    --color-construction-alert: #D32F2F;
+
+    --font-family-headings: 'Oswald', 'Roboto Condensed', sans-serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-construction-light-grey);
+    background-image: url('../images/broken-glass.png');
+    background-repeat: repeat;
+    background-size: 800px;
+    background-blend-mode: multiply;
+    color: var(--color-construction-black);
+}
+
+/* Header Re-skin */
+.horizontal-header,
+.services-header,
+.portfolio-header,
+.about-hero {
+    background:
+        linear-gradient(45deg, #1a1a1a 25%, #212121 25%, #212121 50%, #1a1a1a 50%, #1a1a1a 75%, #212121 75%, #212121 100%) !important;
+    background-size: 20px 20px !important;
+    border-bottom: 5px solid var(--color-construction-yellow);
+    color: #fff;
+}
+
+.site-title,
+h1,
+h2,
+h3 {
+    font-family: var(--font-family-headings);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.site-title {
+    color: var(--color-construction-yellow) !important;
+    text-shadow: 2px 2px 0px #000;
+}
+
+/* Nav Links */
+.main-nav a {
+    text-transform: uppercase;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+
+.main-nav a:hover {
+    background: var(--color-construction-yellow) !important;
+    color: #000 !important;
+}
+
+/* Buttons */
+.cta-btn,
+button[type="submit"] {
+    background: var(--color-construction-yellow) !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    border-radius: 4px !important;
+    /* Blockier buttons */
+    box-shadow: 3px 3px 0px #000 !important;
+    border: 1px solid #000 !important;
+}
+
+.cta-btn:hover,
+button[type="submit"]:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px #000 !important;
+    background: #FFD54F !important;
+}
+
+/* Feature Cards */
+.feature-card,
+.service-card,
+.portfolio-item {
+    border: 2px solid #ccc;
+    border-radius: 4px !important;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-card:hover,
+.service-card:hover,
+.portfolio-item:hover {
+    border-color: var(--color-construction-yellow);
+    transform: translateY(-2px);
+}
+
+.feature-icon,
+.service-icon {
+    color: var(--color-construction-yellow) !important;
+    background: #333 !important;
+    border: 2px solid var(--color-construction-yellow);
+}
+
+/* Hero Section */
+.hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../images/hero/hero-desktop.jpg') center/cover no-repeat !important;
+    /* Ensure image is used with heavy overlay */
+    border-bottom: 8px solid var(--color-construction-yellow);
+}
+
+.hero-content h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    border-left: 5px solid var(--color-construction-yellow);
+    padding-left: 15px;
+}
+
+/* Hazard Stripe Pattern Helper */
+.hazard-stripe {
+    background: repeating-linear-gradient(45deg,
+            var(--color-construction-yellow),
+            var(--color-construction-yellow) 10px,
+            #000 10px,
+            #000 20px);
+    height: 10px;
+    width: 100%;
+}
+
+/* Social Icons */
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #212121;
+    color: #FFC107;
+    border-radius: 4px;
+    /* Blocky */
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid #FFC107;
+    box-shadow: 2px 2px 0 #000;
+}
+
+
+.social-links a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #000;
+    background: #FFC107;
+    color: #212121;
+}
+
+/* Rugged Tablet Component */
+.rugged-tablet-bezel {
+    background-color: #212121;
+    padding: 30px 15px 45px 15px;
+    border-radius: 30px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1),
+        0 0 0 4px #37474F;
+    /* Outer bumper */
+    max-width: 900px;
+    margin: 3rem auto;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .rugged-tablet-bezel {
+        padding: 20px 8px 30px 8px;
+        /* Slimmer bezel on mobile */
+        border-radius: 20px;
+    }
+
+    .rugged-tablet-screen {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Tablet Camera Dot */
+.rugged-tablet-bezel::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: #111;
+    border-radius: 50%;
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.rugged-tablet-screen {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #999;
+}
+
+/* Adjust heading inside tablet */
+.rugged-tablet-screen h2 {
+    margin-top: 0;
+}

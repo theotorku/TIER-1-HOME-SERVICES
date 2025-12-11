@@ -3,6 +3,8 @@
  * Handles image gallery and lightbox functionality with keyboard navigation
  */
 
+import './chatbot.js';
+
 class GalleryLightbox {
   constructor() {
     this.galleryItems = document.querySelectorAll('.gallery-item');

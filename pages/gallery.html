@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - Tier 1 Home Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/chatbot.css" />
   <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/construction-theme.css" />
   <link rel="stylesheet" href="../styles/responsive.css" />
   <style>
     .gallery-section {
@@ -12,23 +20,27 @@
       margin: 40px auto;
       padding: 0 1rem;
     }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
     }
+
     .gallery-item {
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       text-align: center;
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
+
     .gallery-item:hover {
       transform: scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,76,109,0.12);
+      box-shadow: 0 8px 32px rgba(0, 76, 109, 0.12);
     }
+
     .gallery-item img {
       max-width: 100%;
       border-radius: 4px;
@@ -36,18 +48,24 @@
       height: 200px;
       object-fit: cover;
     }
+
     .lightbox {
       display: none;
       position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.8);
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
       z-index: 9999;
     }
+
     .lightbox.active {
       display: flex;
     }
+
     .lightbox-content {
       background: #fff;
       border-radius: 12px;
@@ -55,13 +73,15 @@
       text-align: center;
       max-width: 90vw;
       max-height: 80vh;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
     }
+
     .lightbox-content img {
       max-width: 100%;
       max-height: 60vh;
       border-radius: 8px;
     }
+
     .lightbox-caption {
       margin-top: 1rem;
       color: #004c6d;
@@ -69,6 +89,7 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar">
     <div class="navbar-brand">
@@ -85,6 +106,7 @@
       <li><a href="gallery.html">Gallery</a></li>
     </ul>
   </nav>
+  <div class="hazard-stripe"></div>
 
   <main>
     <section class="gallery-section">
@@ -116,19 +138,22 @@
         <div class="gallery-item">
           <img src="../images/hero/portfolio/project3/after.jpg" alt="Living Room Remodel - After" />
           <div>Elegant Living Room Remodel</div>
-      </div>
-      <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-          <img id="lightbox-img" src="" alt="" />
-          <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
-      </div>
+        <div class="lightbox" id="lightbox">
+          <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="" />
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+          </div>
+        </div>
     </section>
   </main>
 
+  </main>
+  <div class="hazard-stripe"></div>
   <footer>
     <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
   </footer>
   <script src="../js/gallery.js" type="module" defer></script>
 </body>
+
 </html>

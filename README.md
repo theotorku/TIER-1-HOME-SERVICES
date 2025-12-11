@@ -11,12 +11,14 @@ A modern, production-ready website for Tier 1 Home Services, specializing in rem
 ## ✨ Features
 
 ### Core Features
-- 🎨 **Modern Design**: Clean, professional design with CSS custom properties
+- �️ **Construction Theme**: Industrial aesthetic with "broken glass" background and rugged styling
+- 🤖 **Smart Assistant**: Integrated chatbot with scheduling flow and FAQ awareness
+- �🎨 **Modern Design**: Clean, professional design with CSS custom properties
 - 📱 **Fully Responsive**: Optimized for mobile, tablet, and desktop
 - ♿ **Accessible**: WCAG 2.1 compliant with ARIA labels and keyboard navigation
 - ⚡ **Performance Optimized**: Vite build system with code splitting and minification
 - 🔍 **SEO Ready**: Meta tags, Open Graph, structured data, and sitemap
-- 🎭 **Interactive**: Lightbox gallery, smooth scrolling, and mobile menu
+- 🎭 **Interactive**: Service selection modals, Lightbox gallery, and smooth scrolling
 
 ### Technical Features
 - 🛠️ **Modern Build System**: Vite for fast development and optimized production builds
@@ -290,7 +292,7 @@ For issues or questions:
 ---
 
 **Version**: 2.0.0
-**Last Updated**: 2025-11-07
+**Last Updated**: 2025-12-11
 **Status**: Production Ready
 
 ---

@@ -1,384 +1,427 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - Tier 1 Home Services</title>
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/responsive.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <style>
-      body {
-        background: #f8fafc;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      .about-hero {
-        background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
-        color: #fff;
-        text-align: center;
-        padding: 4rem 1rem;
-        margin-bottom: 3rem;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Tier 1 Home Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/chatbot.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/construction-theme.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body {
+      background: #f8fafc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-hero {
+      background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .about-hero h1 {
+      color: #fff;
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .about-hero p {
+      color: #e0f2fe;
+      font-size: 1.3rem;
+      margin: 0;
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    .about-section {
+      background: #fff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 76, 109, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    .about-section h2 {
+      color: #004c6d;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .about-section h2 i {
+      color: #0074a6;
+      font-size: 1.8rem;
+    }
+
+    .about-section p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .about-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .value-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #0074a6;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 76, 109, 0.15);
+    }
+
+    .value-card h3 {
+      color: #004c6d;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .value-card h3 i {
+      color: #0074a6;
+      font-size: 1.5rem;
+    }
+
+    .value-card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
+      color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0, 76, 109, 0.2);
+    }
+
+    .stat-card .number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .stat-card .label {
+      font-size: 1.1rem;
+      color: #b3e5fc;
+      font-weight: 500;
+    }
+
+    .team-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .team-section h2 {
+      color: #004c6d;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .team-section p {
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
+      color: #fff;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 76, 109, 0.2);
+    }
+
+    .cta-section h2 {
+      color: #fff;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: #e0f2fe;
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      background: #fff;
+      color: #004c6d;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-btn.secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .cta-btn.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
       .about-hero h1 {
-        color: #fff;
-        font-size: 2.8rem;
-        margin-bottom: 0.75rem;
-        font-weight: 700;
+        font-size: 2.2rem;
       }
+
       .about-hero p {
-        color: #e0f2fe;
-        font-size: 1.3rem;
-        margin: 0;
-        font-weight: 400;
-        max-width: 700px;
-        margin: 0 auto;
+        font-size: 1.1rem;
       }
-      .about-content {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 1rem 3rem;
+
+      .about-section,
+      .team-section {
+        padding: 1.75rem;
       }
-      .about-section {
-        background: #fff;
-        padding: 2.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0, 76, 109, 0.08);
-        margin-bottom: 2rem;
-      }
+
       .about-section h2 {
-        color: #004c6d;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
+        font-size: 1.6rem;
       }
-      .about-section h2 i {
-        color: #0074a6;
+
+      .stat-card .number {
+        font-size: 2.5rem;
+      }
+
+      .cta-section {
+        padding: 2rem 1.5rem;
+      }
+
+      .cta-section h2 {
         font-size: 1.8rem;
       }
-      .about-section p {
-        color: #555;
-        font-size: 1.05rem;
-        line-height: 1.7;
-        margin-bottom: 1rem;
-      }
-      .about-section p:last-child {
-        margin-bottom: 0;
-      }
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-      .value-card {
-        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        padding: 2rem;
-        border-radius: 10px;
-        border-left: 4px solid #0074a6;
-        transition: all 0.3s ease;
-      }
-      .value-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 24px rgba(0, 76, 109, 0.15);
-      }
-      .value-card h3 {
-        color: #004c6d;
-        font-size: 1.3rem;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .value-card h3 i {
-        color: #0074a6;
-        font-size: 1.5rem;
-      }
-      .value-card p {
-        color: #555;
-        font-size: 1rem;
-        line-height: 1.6;
-        margin: 0;
-      }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-      .stat-card {
-        background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
-        color: #fff;
-        padding: 2rem;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 16px rgba(0, 76, 109, 0.2);
-      }
-      .stat-card .number {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
-      .stat-card .label {
-        font-size: 1.1rem;
-        color: #b3e5fc;
-        font-weight: 500;
-      }
-      .team-section {
-        background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%);
-        padding: 2.5rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-      }
-      .team-section h2 {
-        color: #004c6d;
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
-      .team-section p {
-        color: #555;
-        font-size: 1.05rem;
-        line-height: 1.7;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      .cta-section {
-        background: linear-gradient(135deg, #004c6d 0%, #0074a6 100%);
-        color: #fff;
-        padding: 3rem 2rem;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 8px 24px rgba(0, 76, 109, 0.2);
-      }
-      .cta-section h2 {
-        color: #fff;
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-      }
-      .cta-section p {
-        color: #e0f2fe;
-        font-size: 1.15rem;
-        margin-bottom: 2rem;
-      }
+
       .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: stretch;
       }
-      .cta-btn {
-        background: #fff;
-        color: #004c6d;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      }
-      .cta-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
-      }
-      .cta-btn.secondary {
-        background: transparent;
-        color: #fff;
-        border: 2px solid #fff;
-      }
-      .cta-btn.secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      @media (max-width: 768px) {
-        .about-hero h1 {
-          font-size: 2.2rem;
-        }
-        .about-hero p {
-          font-size: 1.1rem;
-        }
-        .about-section,
-        .team-section {
-          padding: 1.75rem;
-        }
-        .about-section h2 {
-          font-size: 1.6rem;
-        }
-        .stat-card .number {
-          font-size: 2.5rem;
-        }
-        .cta-section {
-          padding: 2rem 1.5rem;
-        }
-        .cta-section h2 {
-          font-size: 1.8rem;
-        }
-        .cta-buttons {
-          flex-direction: column;
-          align-items: stretch;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <img
-          src="../images/hero/logo/logo.png"
-          alt="Tier One Home Services"
-          style="height: 56px; width: auto"
-        />
-        <span class="brand-name">Tier 1 Home Services</span>
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height: 56px; width: auto" />
+      <span class="brand-name">Tier 1 Home Services</span>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="estimate.html">Estimate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hazard-stripe"></div>
+  <main>
+    <section class="about-hero">
+      <h1>About Tier 1 Home Services</h1>
+      <p>Your Trusted Partner in Home Transformation Since 2008</p>
+    </section>
+
+    <div class="about-content">
+      <div class="about-section">
+        <h2><i class="fas fa-home"></i> Our Story</h2>
+        <p>
+          Founded in 2008, Tier 1 Home Services has been transforming homes across the DFW area
+          for over 15 years. What started as a small family-owned business has grown into one of
+          the most trusted names in home remodeling and renovation.
+        </p>
+        <p>
+          Our journey began with a simple mission: to provide homeowners with exceptional quality
+          workmanship, honest pricing, and unparalleled customer service. Today, we continue to
+          uphold these values in every project we undertake, from small bathroom updates to
+          complete home renovations.
+        </p>
       </div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="estimate.html">Estimate</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
 
-    <main>
-      <section class="about-hero">
-        <h1>About Tier 1 Home Services</h1>
-        <p>Your Trusted Partner in Home Transformation Since 2008</p>
-      </section>
+      <div class="about-section">
+        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+        <p>
+          At Tier 1 Home Services, our mission is to turn your house into the home of your
+          dreams. We believe that every homeowner deserves a beautiful, functional living space
+          that reflects their unique style and meets their specific needs.
+        </p>
+        <p>
+          We achieve this by combining skilled craftsmanship, premium materials, innovative
+          design solutions, and a commitment to excellence that shows in every detail. Your
+          satisfaction is our success, and we won't rest until you're absolutely thrilled with
+          the results.
+        </p>
+      </div>
 
-      <div class="about-content">
-        <div class="about-section">
-          <h2><i class="fas fa-home"></i> Our Story</h2>
-          <p>
-            Founded in 2008, Tier 1 Home Services has been transforming homes across the DFW area
-            for over 15 years. What started as a small family-owned business has grown into one of
-            the most trusted names in home remodeling and renovation.
-          </p>
-          <p>
-            Our journey began with a simple mission: to provide homeowners with exceptional quality
-            workmanship, honest pricing, and unparalleled customer service. Today, we continue to
-            uphold these values in every project we undertake, from small bathroom updates to
-            complete home renovations.
-          </p>
-        </div>
-
-        <div class="about-section">
-          <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
-          <p>
-            At Tier 1 Home Services, our mission is to turn your house into the home of your
-            dreams. We believe that every homeowner deserves a beautiful, functional living space
-            that reflects their unique style and meets their specific needs.
-          </p>
-          <p>
-            We achieve this by combining skilled craftsmanship, premium materials, innovative
-            design solutions, and a commitment to excellence that shows in every detail. Your
-            satisfaction is our success, and we won't rest until you're absolutely thrilled with
-            the results.
-          </p>
-        </div>
-
-        <div class="about-section">
-          <h2><i class="fas fa-star"></i> Our Values</h2>
-          <div class="values-grid">
-            <div class="value-card">
-              <h3><i class="fas fa-shield-alt"></i> Integrity</h3>
-              <p>
-                We believe in honest communication, transparent pricing, and doing what's right for
-                our customers, every single time.
-              </p>
-            </div>
-            <div class="value-card">
-              <h3><i class="fas fa-award"></i> Quality</h3>
-              <p>
-                We never compromise on quality. From materials to workmanship, we deliver
-                excellence in every aspect of your project.
-              </p>
-            </div>
-            <div class="value-card">
-              <h3><i class="fas fa-handshake"></i> Reliability</h3>
-              <p>
-                When we make a commitment, we keep it. You can count on us to show up on time,
-                stay on budget, and finish on schedule.
-              </p>
-            </div>
-            <div class="value-card">
-              <h3><i class="fas fa-heart"></i> Customer Focus</h3>
-              <p>
-                Your vision drives everything we do. We listen carefully, communicate clearly, and
-                work tirelessly to exceed your expectations.
-              </p>
-            </div>
+      <div class="about-section">
+        <h2><i class="fas fa-star"></i> Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3><i class="fas fa-shield-alt"></i> Integrity</h3>
+            <p>
+              We believe in honest communication, transparent pricing, and doing what's right for
+              our customers, every single time.
+            </p>
           </div>
-        </div>
-
-        <div class="about-section">
-          <h2><i class="fas fa-chart-line"></i> By The Numbers</h2>
-          <div class="stats-grid">
-            <div class="stat-card">
-              <span class="number">15+</span>
-              <span class="label">Years in Business</span>
-            </div>
-            <div class="stat-card">
-              <span class="number">500+</span>
-              <span class="label">Projects Completed</span>
-            </div>
-            <div class="stat-card">
-              <span class="number">98%</span>
-              <span class="label">Customer Satisfaction</span>
-            </div>
-            <div class="stat-card">
-              <span class="number">100%</span>
-              <span class="label">Licensed & Insured</span>
-            </div>
+          <div class="value-card">
+            <h3><i class="fas fa-award"></i> Quality</h3>
+            <p>
+              We never compromise on quality. From materials to workmanship, we deliver
+              excellence in every aspect of your project.
+            </p>
           </div>
-        </div>
-
-        <div class="team-section">
-          <h2><i class="fas fa-users"></i> Our Team</h2>
-          <p>
-            Our team consists of highly skilled professionals who are passionate about what they
-            do. From our experienced project managers to our master craftsmen, every member of the
-            Tier 1 family is dedicated to delivering exceptional results. We invest in ongoing
-            training and education to ensure we're always at the forefront of industry best
-            practices and the latest techniques.
-          </p>
-        </div>
-
-        <div class="cta-section">
-          <h2>Ready to Start Your Project?</h2>
-          <p>
-            Let's work together to transform your home into the space you've always dreamed of.
-            Contact us today for a free consultation!
-          </p>
-          <div class="cta-buttons">
-            <a href="contact.html" class="cta-btn">
-              <i class="fas fa-envelope"></i>
-              Get In Touch
-            </a>
-            <a href="estimate.html" class="cta-btn secondary">
-              <i class="fas fa-calculator"></i>
-              Request Estimate
-            </a>
+          <div class="value-card">
+            <h3><i class="fas fa-handshake"></i> Reliability</h3>
+            <p>
+              When we make a commitment, we keep it. You can count on us to show up on time,
+              stay on budget, and finish on schedule.
+            </p>
+          </div>
+          <div class="value-card">
+            <h3><i class="fas fa-heart"></i> Customer Focus</h3>
+            <p>
+              Your vision drives everything we do. We listen carefully, communicate clearly, and
+              work tirelessly to exceed your expectations.
+            </p>
           </div>
         </div>
       </div>
-    </main>
 
-    <footer>
-      <p>&copy; 2025 Tier 1 Home Services. All rights reserved.</p>
-    </footer>
-    <script src="../js/main.js" type="module" defer></script>
-  </body>
+      <div class="about-section">
+        <h2><i class="fas fa-chart-line"></i> By The Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="number">15+</span>
+            <span class="label">Years in Business</span>
+          </div>
+          <div class="stat-card">
+            <span class="number">500+</span>
+            <span class="label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="number">98%</span>
+            <span class="label">Customer Satisfaction</span>
+          </div>
+          <div class="stat-card">
+            <span class="number">100%</span>
+            <span class="label">Licensed & Insured</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <h2><i class="fas fa-users"></i> Our Team</h2>
+        <p>
+          Our team consists of highly skilled professionals who are passionate about what they
+          do. From our experienced project managers to our master craftsmen, every member of the
+          Tier 1 family is dedicated to delivering exceptional results. We invest in ongoing
+          training and education to ensure we're always at the forefront of industry best
+          practices and the latest techniques.
+        </p>
+      </div>
+
+      <div class="cta-section">
+        <h2>Ready to Start Your Project?</h2>
+        <p>
+          Let's work together to transform your home into the space you've always dreamed of.
+          Contact us today for a free consultation!
+        </p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="cta-btn">
+            <i class="fas fa-envelope"></i>
+            Get In Touch
+          </a>
+          <a href="estimate.html" class="cta-btn secondary">
+            <i class="fas fa-calculator"></i>
+            Request Estimate
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="hazard-stripe"></div>
+
+  <footer>
+    <p>&copy; 2025 Tier 1 Home Services. All rights reserved.</p>
+  </footer>
+  <script src="../js/main.js" type="module" defer></script>
+</body>
+
 </html>
-

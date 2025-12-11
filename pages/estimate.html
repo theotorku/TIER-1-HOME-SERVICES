@@ -1,70 +1,109 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Request a Free Estimate - Tier 1 Home Services</title>
-    <link rel="stylesheet" href="../styles/main.css" />
-    <link rel="stylesheet" href="../styles/responsive.css" />
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="navbar-brand">
-        <img
-          src="../images/hero/logo/logo.png"
-          alt="Tier One Home Services"
-          style="height: 56px; width: auto"
-        />
-        <span class="brand-name">Tier 1 Home Services</span>
-      </div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="estimate.html">Estimate</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
 
-    <main>
-      <section class="about-hero">
-        <h1>Request a Free Estimate</h1>
-        <p>Get a detailed quote with no obligation.</p>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Free Estimate - Tier 1 Home Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/chatbot.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/construction-theme.css" />
+  <link rel="stylesheet" href="../styles/responsive.css" />
+</head>
 
-      <section class="estimate-form">
-        <form action="#" method="POST">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required />
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../images/hero/logo/logo.png" alt="Tier One Home Services" style="height: 56px; width: auto" />
+      <span class="brand-name">Tier 1 Home Services</span>
+    </div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="estimate.html">Estimate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hazard-stripe"></div>
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
+  <main>
+    <section class="about-hero">
+      <h1>Request a Free Estimate</h1>
+      <p>Get a detailed quote with no obligation.</p>
+    </section>
 
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" />
+    <section class="estimate-form">
+      <form action="#" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required />
 
-          <label for="service">Type of Service</label>
-          <select id="service" name="service">
-            <option>Bathroom Remodel</option>
-            <option>Kitchen Remodel</option>
-            <option>Flooring Installation</option>
-            <option>General Renovation</option>
-          </select>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required />
 
-          <label for="message">Project Description</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" />
 
-          <button type="submit">Submit Request</button>
-        </form>
-      </section>
-    </main>
+        <label for="service">Type of Service</label>
+        <select id="service" name="service">
+          <option>Bathroom Remodel</option>
+          <option>Kitchen Remodel</option>
+          <option>Flooring Installation</option>
+          <option>General Renovation</option>
+        </select>
 
-    <footer>
-      <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
-    </footer>
-    <script src="../js/main.js" type="module" defer></script>
-    <script src="../js/form-validation.js" type="module" defer></script>
-  </body>
+        <label for="message">Project Description</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit Request</button>
+      </form>
+    </section>
+  </main>
+
+  </main>
+  <div class="hazard-stripe"></div>
+  <footer>
+    <p>© 2025 Tier 1 Home Services. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get('service');
+      const details = params.get('details');
+
+      if (service) {
+        const select = document.getElementById('service');
+        // Simple mapping attempt
+        const map = {
+          'bathroom': 'Bathroom Remodel',
+          'kitchen': 'Kitchen Remodel',
+          'flooring': 'Flooring Installation'
+        };
+
+        // Find option that contains the service keyword
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].text.toLowerCase().includes(service)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (details) {
+        const msg = document.getElementById('message');
+        msg.value = `I'm interested in: ${details}.\n\nProject Details:\n`;
+      }
+    });
+  </script>
+  <script src="../js/main.js" type="module" defer></script>
+  <script src="../js/form-validation.js" type="module" defer></script>
+</body>
+
 </html>

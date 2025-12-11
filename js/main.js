@@ -4,6 +4,7 @@
  */
 
 import './navigation.js';
+import './chatbot.js';
 
 // Utility function for lazy loading images
 function lazyLoadImages() {
