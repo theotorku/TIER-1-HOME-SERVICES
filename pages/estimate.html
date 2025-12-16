@@ -41,7 +41,12 @@
     </section>
 
     <section class="estimate-form">
-      <form action="#" method="POST">
+      <form id="estimateForm" action="https://formspree.io/f/YOUR_ESTIMATE_FORM_ID" method="POST">
+        <!-- Formspree configuration -->
+        <input type="hidden" name="_subject" value="New Estimate Request - Tier 1 Home Services" />
+        <input type="hidden" name="_next" value="https://tier-1-home-services.vercel.app/pages/estimate.html?success=true" />
+        <input type="text" name="_gotcha" style="display:none" />
+
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required />
 
@@ -53,6 +58,7 @@
 
         <label for="service">Type of Service</label>
         <select id="service" name="service">
+          <option value="">Select a service...</option>
           <option>Bathroom Remodel</option>
           <option>Kitchen Remodel</option>
           <option>Flooring Installation</option>
@@ -62,7 +68,10 @@
         <label for="message">Project Description</label>
         <textarea id="message" name="message" rows="5" required></textarea>
 
-        <button type="submit">Submit Request</button>
+        <!-- Success/Error Messages -->
+        <div id="formStatus" style="display:none; padding: 1rem; margin-bottom: 1rem; border-radius: 8px;"></div>
+
+        <button type="submit" id="submitBtn">Submit Request</button>
       </form>
     </section>
   </main>
@@ -103,7 +112,7 @@
     });
   </script>
   <script src="../js/main.js" type="module" defer></script>
-  <script src="../js/form-validation.js" type="module" defer></script>
+  <script src="../js/formspree-handler.js" type="module" defer></script>
 </body>
 
 </html>
