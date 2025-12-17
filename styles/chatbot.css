@@ -173,6 +173,46 @@
   border-bottom-right-radius: 4px;
 }
 
+/* Capability list inside the first message */
+.chatbot-capabilities {
+  margin: 0.5rem 0 0.75rem;
+  padding-left: 1.2rem;
+  font-size: 13px;
+  color: #555;
+}
+
+.chatbot-capabilities li + li {
+  margin-top: 0.25rem;
+}
+
+/* Quick reply chips */
+.chat-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.chat-quick-reply {
+  border: 1px solid #ddd;
+  background: #f8fafc;
+  color: #004c6d;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.1s;
+}
+
+.chat-quick-reply:hover {
+  background: #e0f2fe;
+  border-color: #0074a6;
+  transform: translateY(-1px);
+}
+
 .chatbot-input {
   padding: 20px;
   border-top: 1px solid #eee;

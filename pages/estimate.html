@@ -47,26 +47,118 @@
         <input type="hidden" name="_next" value="https://www.tire1homeservices.com/pages/estimate.html?success=true" />
         <input type="text" name="_gotcha" style="display:none" />
 
-        <label for="name">Full Name</label>
+        <h2>Tell Us About Your Project</h2>
+        <p>Answer a few quick questions so we can give you the most accurate estimate possible.</p>
+
+        <!-- Contact Information -->
+        <label for="name">Full Name *</label>
         <input type="text" id="name" name="name" required />
 
-        <label for="email">Email Address</label>
+        <label for="email">Email Address *</label>
         <input type="email" id="email" name="email" required />
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" />
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required />
 
-        <label for="service">Type of Service</label>
-        <select id="service" name="service">
-          <option value="">Select a service...</option>
-          <option>Bathroom Remodel</option>
-          <option>Kitchen Remodel</option>
-          <option>Flooring Installation</option>
-          <option>General Renovation</option>
+        <!-- Location & Property Details -->
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required />
+
+        <label for="zip">ZIP Code *</label>
+        <input type="text" id="zip" name="zip" required />
+
+        <label for="propertyType">Property Type *</label>
+        <select id="propertyType" name="property_type" required>
+          <option value="">Select property type...</option>
+          <option>Single-family home</option>
+          <option>Townhome / Duplex</option>
+          <option>Condo</option>
+          <option>Rental property</option>
+          <option>Other</option>
         </select>
 
-        <label for="message">Project Description</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <!-- Project Scope -->
+        <label for="service">Primary Project Type *</label>
+        <select id="service" name="service" required>
+          <option value="">Select a project type...</option>
+          <option>Bathroom remodel</option>
+          <option>Kitchen remodel</option>
+          <option>Flooring installation</option>
+          <option>Multiple rooms / whole-home remodel</option>
+          <option>General interior renovation</option>
+          <option>Other / not sure yet</option>
+        </select>
+
+        <fieldset>
+          <legend>Which areas are involved? (Select all that apply)</legend>
+          <label><input type="checkbox" name="project_areas" value="Master bathroom" /> Master bathroom</label>
+          <label><input type="checkbox" name="project_areas" value="Guest bathroom" /> Guest bathroom</label>
+          <label><input type="checkbox" name="project_areas" value="Kitchen" /> Kitchen</label>
+          <label><input type="checkbox" name="project_areas" value="Living areas" /> Living areas</label>
+          <label><input type="checkbox" name="project_areas" value="Bedrooms" /> Bedrooms</label>
+          <label><input type="checkbox" name="project_areas" value="Whole home" /> Whole home</label>
+          <label><input type="checkbox" name="project_areas" value="Other areas" /> Other areas</label>
+        </fieldset>
+
+        <!-- Timing & Budget -->
+        <label for="timeline">Ideal Start Timeframe *</label>
+        <select id="timeline" name="timeline" required>
+          <option value="">Select a timeframe...</option>
+          <option>As soon as possible (next 30 days)</option>
+          <option>1 - 3 months</option>
+          <option>3 - 6 months</option>
+          <option>6+ months / just planning</option>
+        </select>
+
+        <label for="budgetRange">Approximate Budget Range *</label>
+        <select id="budgetRange" name="budget_range" required>
+          <option value="">Select a budget range...</option>
+          <option>Under $5,000</option>
+          <option>$5,000 - $15,000</option>
+          <option>$15,000 - $30,000</option>
+          <option>$30,000 - $50,000</option>
+          <option>Over $50,000</option>
+          <option>Not sure yet</option>
+        </select>
+
+        <label for="projectStage">Where are you in the process? *</label>
+        <select id="projectStage" name="project_stage" required>
+          <option value="">Select an option...</option>
+          <option>Just researching ideas</option>
+          <option>Collecting estimates</option>
+          <option>Ready to start soon</option>
+          <option>Project already started, need help finishing</option>
+        </select>
+
+        <!-- Contact Preferences -->
+        <label for="preferredContact">Preferred Contact Method *</label>
+        <select id="preferredContact" name="preferred_contact" required>
+          <option value="">Select a contact method...</option>
+          <option>Phone</option>
+          <option>Email</option>
+          <option>Text message</option>
+          <option>No preference</option>
+        </select>
+
+        <label for="hearAbout">How did you hear about us?</label>
+        <select id="hearAbout" name="lead_source">
+          <option value="">Select an option...</option>
+          <option>Google search</option>
+          <option>Facebook / Instagram</option>
+          <option>Referral from a friend or family</option>
+          <option>Yard sign or vehicle</option>
+          <option>Repeat customer</option>
+          <option>Other</option>
+        </select>
+
+        <!-- Project Description -->
+        <label for="message">Project Details *</label>
+        <textarea id="message" name="message" rows="5" required
+          placeholder="Tell us about the rooms involved, current condition, what you'd like to change, and any key must-haves."></textarea>
+
+        <label for="extraDetails">Anything else we should know?</label>
+        <textarea id="extraDetails" name="extra_details" rows="3"
+          placeholder="Timeline constraints, inspiration links, special materials, accessibility needs, etc."></textarea>
 
         <!-- Success/Error Messages -->
         <div id="formStatus" style="display:none; padding: 1rem; margin-bottom: 1rem; border-radius: 8px;"></div>
@@ -74,8 +166,6 @@
         <button type="submit" id="submitBtn">Submit Request</button>
       </form>
     </section>
-  </main>
-
   </main>
   <div class="hazard-stripe"></div>
   <footer>
