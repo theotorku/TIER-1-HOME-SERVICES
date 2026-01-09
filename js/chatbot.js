@@ -34,13 +34,14 @@ const initChatbot = () => {
           <div class="message-content">
             Hello! 👋 I'm the Tier 1 Remodeling Assistant for homeowners in the DFW area.
             <br /><br />
-            I can answer questions about your bathroom, kitchen, or flooring project and help you:
+            I can help you:
             <ul class="chatbot-capabilities">
-              <li>Understand typical timelines and what to expect</li>
+              <li>See if your project is a good fit for our team</li>
               <li>Get a free estimate or schedule a consultation</li>
-              <li>Learn about materials, warranties, and our process</li>
+              <li>Understand typical timelines and what to expect</li>
             </ul>
             <div class="chat-quick-replies">
+              <button type="button" class="chat-quick-reply" data-msg="See if my project is a fit">See if my project is a fit</button>
               <button type="button" class="chat-quick-reply" data-msg="Tell me about bathroom remodels">Bathroom Remodels</button>
               <button type="button" class="chat-quick-reply" data-msg="Tell me about kitchen remodels">Kitchen Remodels</button>
               <button type="button" class="chat-quick-reply" data-msg="Tell me about flooring options">Flooring Options</button>
@@ -107,8 +108,9 @@ const initChatbot = () => {
   };
 
   // State Management & simple domain context
-  let chatState = 'idle'; // idle, scheduling_name, scheduling_service, scheduling_date, scheduling_email
+  let chatState = 'idle'; // idle, scheduling_*, qualify_*
   let appointmentData = {};
+  let qualificationData = {};
   let lastService = null; // bathroom | kitchen | flooring | general
 
   const getBotResponse = (msg) => {
@@ -125,6 +127,154 @@ const initChatbot = () => {
       lastService = 'flooring';
     } else if (containsAny(['remodel', 'renovation', 'upgrade', 'project'])) {
       lastService = lastService || 'general';
+    }
+
+    // Lead qualification flow (multi-step, button-driven)
+    if (chatState === 'qualify_location') {
+      qualificationData.locationRaw = msg;
+
+      let locationCategory = 'unknown';
+      if (containsAny(['dfw', 'dallas', 'fort worth'])) {
+        locationCategory = 'dfw';
+      } else if (containsAny(['within', 'nearby', 'close'])) {
+        locationCategory = 'nearby';
+      } else if (containsAny(['outside texas', 'out of state', 'another state'])) {
+        locationCategory = 'outside_tx';
+      } else if (containsAny(['texas'])) {
+        locationCategory = 'texas_far';
+      }
+
+      qualificationData.locationCategory = locationCategory;
+
+      if (locationCategory === 'outside_tx') {
+        chatState = 'idle';
+        return 'Thanks for sharing that. Right now we focus on interior remodeling projects in the DFW metroplex and nearby communities. Based on your location, we may not be the best fit. You are still welcome to reach out through our <a href="pages/contact.html" target="_blank">contact page</a>.';
+      }
+
+      chatState = 'qualify_project_type';
+      return `
+        Great, thank you. What kind of project are you planning?
+        <div class="chat-quick-replies">
+          <button type="button" class="chat-quick-reply" data-msg="Bathroom remodel">Bathroom remodel</button>
+          <button type="button" class="chat-quick-reply" data-msg="Kitchen remodel">Kitchen remodel</button>
+          <button type="button" class="chat-quick-reply" data-msg="Flooring project">Flooring</button>
+          <button type="button" class="chat-quick-reply" data-msg="Multiple rooms / whole-home remodel">Multiple rooms / whole-home</button>
+          <button type="button" class="chat-quick-reply" data-msg="Other interior renovation">Other interior renovation</button>
+          <button type="button" class="chat-quick-reply" data-msg="Small repair or single door/window">Small repair / door / window</button>
+          <button type="button" class="chat-quick-reply" data-msg="Mostly exterior work like roof or siding">Mostly exterior</button>
+        </div>
+      `;
+    }
+
+    if (chatState === 'qualify_project_type') {
+      qualificationData.projectRaw = msg;
+
+      let projectCategory = 'other_interior';
+      if (containsAny(['bathroom'])) {
+        projectCategory = 'bathroom';
+      } else if (containsAny(['kitchen'])) {
+        projectCategory = 'kitchen';
+      } else if (containsAny(['floor', 'flooring'])) {
+        projectCategory = 'flooring';
+      } else if (containsAny(['whole-home', 'whole home', 'multiple rooms'])) {
+        projectCategory = 'whole_home';
+      }
+
+      if (containsAny(['small repair', 'patch', 'single door', 'single window'])) {
+        projectCategory = 'small_repair';
+      }
+      if (containsAny(['exterior', 'roof', 'siding', 'gutter', 'outside'])) {
+        projectCategory = 'exterior';
+      }
+
+      qualificationData.projectCategory = projectCategory;
+
+      if (projectCategory === 'small_repair' || projectCategory === 'exterior') {
+        chatState = 'idle';
+        return 'Thanks for the info. We focus on larger interior remodeling projects like bathrooms, kitchens, flooring, and whole-home remodels. For small repairs, single doors/windows, or exterior-only work, we may not be the best fit. You can still reach us through our <a href="pages/contact.html" target="_blank">contact page</a> or review our <a href="pages/services.html" target="_blank">services</a>.';
+      }
+
+      chatState = 'qualify_budget';
+      return `
+        That sounds like a great interior project. What’s your approximate budget range?
+        <div class="chat-quick-replies">
+          <button type="button" class="chat-quick-reply" data-msg="Under $5,000">Under $5,000</button>
+          <button type="button" class="chat-quick-reply" data-msg="$5,000 – $15,000">$5,000 – $15,000</button>
+          <button type="button" class="chat-quick-reply" data-msg="$15,000 – $30,000">$15,000 – $30,000</button>
+          <button type="button" class="chat-quick-reply" data-msg="$30,000 – $50,000">$30,000 – $50,000</button>
+          <button type="button" class="chat-quick-reply" data-msg="$50,000+">$50,000+</button>
+        </div>
+      `;
+    }
+
+    if (chatState === 'qualify_budget') {
+      qualificationData.budget = msg;
+      chatState = 'qualify_timeline';
+      return `
+        Thanks, that helps. When are you hoping to start the project?
+        <div class="chat-quick-replies">
+          <button type="button" class="chat-quick-reply" data-msg="As soon as possible (next 30 days)">As soon as possible (next 30 days)</button>
+          <button type="button" class="chat-quick-reply" data-msg="1–3 months">1–3 months</button>
+          <button type="button" class="chat-quick-reply" data-msg="3–6 months">3–6 months</button>
+          <button type="button" class="chat-quick-reply" data-msg="6+ months / just planning">6+ months / just planning</button>
+        </div>
+      `;
+    }
+
+    if (chatState === 'qualify_timeline') {
+      qualificationData.timeline = msg;
+      chatState = 'qualify_ownership';
+      return `
+        Got it. Are you one of the decision-makers for this property?
+        <div class="chat-quick-replies">
+          <button type="button" class="chat-quick-reply" data-msg="Yes, I own the property">Yes, I own the property</button>
+          <button type="button" class="chat-quick-reply" data-msg="I own or manage the rental">I own or manage the rental</button>
+          <button type="button" class="chat-quick-reply" data-msg="I don’t own the property / just exploring">I don’t own the property / just exploring</button>
+        </div>
+      `;
+    }
+
+    if (chatState === 'qualify_ownership') {
+      qualificationData.ownership = msg;
+      chatState = 'idle';
+
+      const projectSummary = (qualificationData.projectCategory || 'remodeling').replace('_', ' ');
+      let locationSummary = 'near you';
+      if (qualificationData.locationCategory === 'dfw' || qualificationData.locationCategory === 'nearby') {
+        locationSummary = 'in the DFW area';
+      } else if (qualificationData.locationCategory === 'texas_far') {
+        locationSummary = 'in Texas';
+      }
+
+      const budgetSummary = qualificationData.budget || 'your budget range';
+      const timelineSummary = qualificationData.timeline || 'your ideal timeline';
+
+      return `
+        Thanks for walking through those questions with me.
+        From what you’ve shared — a ${projectSummary} project ${locationSummary} with a budget of ${budgetSummary} and a timeline of ${timelineSummary} — this sounds like a project we’d like to learn more about.
+        <br /><br />
+        The best next step is to complete our detailed estimate form so our team can review everything and follow up with a quote:
+        <br />
+        <a href="pages/estimate.html" target="_blank">Request a Free Estimate</a>
+      `;
+    }
+
+    // Lead qualification entry point (when user asks if their project is a fit)
+    const wantsQualification = chatState === 'idle' && lowerMsg.includes('project') && lowerMsg.includes('fit');
+
+    if (wantsQualification) {
+      qualificationData = {};
+      chatState = 'qualify_location';
+      return `
+        Great, let's see if your project is a good fit.
+        First, where is the property located?
+        <div class="chat-quick-replies">
+          <button type="button" class="chat-quick-reply" data-msg="In the DFW Metroplex">In the DFW Metroplex</button>
+          <button type="button" class="chat-quick-reply" data-msg="Within about 30 miles of DFW">Within about 30 miles of DFW</button>
+          <button type="button" class="chat-quick-reply" data-msg="In Texas, but farther away">In Texas, but farther away</button>
+          <button type="button" class="chat-quick-reply" data-msg="Outside Texas">Outside Texas</button>
+        </div>
+      `;
     }
 
     // Scheduling Flow
